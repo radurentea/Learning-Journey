@@ -285,45 +285,4 @@ The `file` command outputs the file type.
     drive. All the devices that the kernel
     understands are represented here.</td>
   </tr>
-
-  <tr>
-    <td><code>/proc</code></td>
-    <td>The <code>/proc</code> directory
-    is also special. This directory does not
-    contain files. In fact, this directory does
-    not really exist at all. It is entirely
-    virtual. The <code>/proc</code>
-    directory contains little peep holes into the
-    kernel itself. There are a group of numbered
-    entries in this directory that correspond to
-    all the processes running on the system. In
-    addition, there are a number of named entries
-    that permit access to the current
-    configuration of the system. Many of these
-    entries can be viewed. Try viewing <code>/proc/cpuinfo</code>. This entry will
-    tell you what the kernel thinks of the system's
-    CPU.</td>
-  </tr>
-
-  <tr>
-    <td><code>/media</code></td>
-    <td>Finally, we come to <code>/media</code>, a normal directory which is
-    used in a special way. The <code>/media</code> directory is used for
-    <i>mount points</i>. As we learned in the <a href="lc3_lts0020.php">second lesson</a>, the
-    different physical storage devices (like hard
-    disk drives) are attached to the file system
-    tree in various places. This process of
-    attaching a device to the tree is called
-    <i>mounting</i>. For a device to be
-    available, it must first be mounted.<br><br>
-    When your system boots, it reads a list of mounting instructions in the
-    <code>/etc/fstab</code> file, which describes which device is
-    mounted at which mount point in the directory tree. This takes care of the
-    hard drives, but we may also have devices that are considered temporary,
-    such as optical disks and USB storage devices. Since these are removable, they do not
-    stay mounted all the time. The <code>/media</code> directory
-    is used by the automatic device mounting mechanisms found in modern desktop
-    oriented Linux distributions.  To see what devices and mount points are
-    used, type <a href="lc3_man_pages/mount8.html"> <code>mount</code></a>.</td>
-  </tr>
 </tbody></table>
