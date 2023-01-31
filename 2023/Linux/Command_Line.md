@@ -7,6 +7,7 @@
     - [ls](#ls)
     - [less](#less)
     - [file](#file)
+  - [Common Linux Directories](#common-linux-directories)
 
 
 # Learning the Shell
@@ -76,7 +77,7 @@ drwxr-xr-x   6 me       me           1024 Oct  9  2019 web_page
 
 **Owner** - The name of the user who owns the file.
 
-**File Permissions** - A representation of the file's access permissions. The first character is the type of file. A "-" indicates a regular (ordinary) file. A "d" indicates a directory. The second set of three characters represent the read, write, and execution rights of the file's owner. The next three represent the rights of the file's group, and the final three represent the rights granted to everybody else. We'll discuss this in more detail in a later lesson.
+**File Permissions** - A representation of the file's access permissions. The first character is the type of file. A "-" indicates a regular (ordinary) file. A "d" indicates a directory. A "l" indicates a symbolic link (= a special type of file that points to another file). The second set of three characters represent the read, write, and execution rights of the file's owner. The next three represent the rights of the file's group, and the final three represent the rights granted to everybody else. We'll discuss this in more detail in a later lesson.
 
 ### less
 
@@ -136,3 +137,193 @@ drwxr-xr-x   6 me       me           1024 Oct  9  2019 web_page
 ### file
 The `file` command outputs the file type.
 <pre>file <i>name_of_file</i></pre>
+
+## Common Linux Directories
+
+<table>
+
+
+  <tbody><tr>
+    <th><strong>Directory</strong></th>
+    <th><strong>Description</strong></th>
+  </tr>
+
+  <tr>
+    <td><code>/</code></td>
+    <td>The root directory where the file system
+    begins.</td>
+  </tr>
+
+  <tr>
+    <td><code>/boot</code></td>
+    <td>This is where the Linux kernel and boot loader
+    files are kept. The kernel is a file called <code class="user">vmlinuz</code>.</td>
+  </tr>
+
+  <tr>
+    <td><code>/etc</code></td>
+    <td>The <code>/etc</code> directory contains the configuration files for the system.</td>
+  </tr>
+
+  <tr>
+    <td><code>/etc/passwd</code></td>
+    <td>The <code>passwd</code> file contains the essential information for each user. This is where user accounts are defined.</td>
+  </tr>
+
+  <tr>
+    <td><code>/etc/fstab</code></td>
+    <td>The <code>fstab</code> file contains a table of devices that get mounted when the system boots. This file defines the system's disk drives.</td>
+  </tr>
+
+  <tr>
+    <td><code>/etc/hosts</code></td>
+    <td>This file lists the network host names and IP addresses that are intrinsically known to the system.</td>
+  </tr>
+
+  <tr>
+    <td><code>/etc/init.d</code></td>
+    <td>This directory contains the scripts that start various system services at boot time.</td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code>/bin, /usr/bin</code></span></td>
+    <td>These two directories contain most of the programs for the 
+    system. The <code>/bin</code> directory has the essential
+    programs that the system requires to operate,
+    while <code>/usr/bin</code> contains
+    applications for the system's users.</td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code>/sbin, /usr/sbin</code></span></td>
+    <td>The <code>sbin</code> directories
+    contain programs for system administration, mostly for use by the superuser.</td>
+  </tr>
+
+  <tr>
+    <td><code>/usr</code></td>
+    <td>The <code>/usr</code> directory contains a variety of things that support user applications.</td>
+  </tr>
+
+  <tr>
+    <td><code>/usr/share/doc</code></td>
+    <td>Various documentation files in a
+      variety of formats.</td>
+  </tr>
+
+  <tr>
+    <td><code>/usr/share/man</code></td>
+    <td>The man pages are kept here.</td>
+  </tr>
+
+  <tr>
+    <td><code>/usr/local</code></td>
+    <td><code>/usr/local</code> and its
+    subdirectories are used for the installation
+    of software and other files for use on the
+    local machine. What this really means is that
+    software that is not part of the official
+    distribution (which usually goes in <code>/usr/bin</code>) goes here.<br><br>
+    When you find interesting programs to
+    install on your system, they should be
+    installed in one of the <code>/usr/local</code> directories. Most
+    often, the directory of choice is <code>/usr/local/bin</code>.</td>
+  </tr>
+
+  <tr>
+    <td><code>/var</code></td>
+    <td>The <code>/var</code> directory
+    contains files that change as the system is
+    running.
+    </td>
+  </tr>
+
+  <tr>
+    <td><code>/var/log</code></td>
+    <td>Directory that contains log files.  These are updated as the system
+      runs. It's a good idea to view the files in this directory from time to
+      time, to monitor the health of your system.</td>
+  </tr>
+
+  <tr>
+    <td><code>/lib</code></td>
+    <td>The shared libraries (similar to DLLs in
+    that other operating system) are kept
+    here.</td>
+  </tr>
+
+  <tr>
+    <td><code>/home</code></td>
+    <td><code>/home</code> is where users
+    keep their personal work. In general, this is
+    the only place users are allowed to write
+    files.</td>
+  </tr>
+
+  <tr>
+    <td><code>/root</code></td>
+    <td>This is the superuser's home directory.</td>
+  </tr>
+
+  <tr>
+    <td><code>/tmp</code></td>
+    <td><code>/tmp</code> is a directory
+    in which programs can write their temporary files.</td>
+  </tr>
+
+  <tr>
+    <td><code>/dev</code></td>
+    <td>The <code>/dev</code> directory
+    is a special directory, since it does not
+    really contain files in the usual sense.
+    Rather, it contains devices that are available
+    to the system. In Linux (like Unix), devices
+    are treated like files. You can read and
+    write devices as though they were files. For
+    example <code>/dev/fd0</code> is the
+    first floppy disk drive, <code>/dev/sda</code> is the first hard
+    drive. All the devices that the kernel
+    understands are represented here.</td>
+  </tr>
+
+  <tr>
+    <td><code>/proc</code></td>
+    <td>The <code>/proc</code> directory
+    is also special. This directory does not
+    contain files. In fact, this directory does
+    not really exist at all. It is entirely
+    virtual. The <code>/proc</code>
+    directory contains little peep holes into the
+    kernel itself. There are a group of numbered
+    entries in this directory that correspond to
+    all the processes running on the system. In
+    addition, there are a number of named entries
+    that permit access to the current
+    configuration of the system. Many of these
+    entries can be viewed. Try viewing <code>/proc/cpuinfo</code>. This entry will
+    tell you what the kernel thinks of the system's
+    CPU.</td>
+  </tr>
+
+  <tr>
+    <td><code>/media</code></td>
+    <td>Finally, we come to <code>/media</code>, a normal directory which is
+    used in a special way. The <code>/media</code> directory is used for
+    <i>mount points</i>. As we learned in the <a href="lc3_lts0020.php">second lesson</a>, the
+    different physical storage devices (like hard
+    disk drives) are attached to the file system
+    tree in various places. This process of
+    attaching a device to the tree is called
+    <i>mounting</i>. For a device to be
+    available, it must first be mounted.<br><br>
+    When your system boots, it reads a list of mounting instructions in the
+    <code>/etc/fstab</code> file, which describes which device is
+    mounted at which mount point in the directory tree. This takes care of the
+    hard drives, but we may also have devices that are considered temporary,
+    such as optical disks and USB storage devices. Since these are removable, they do not
+    stay mounted all the time. The <code>/media</code> directory
+    is used by the automatic device mounting mechanisms found in modern desktop
+    oriented Linux distributions.  To see what devices and mount points are
+    used, type <a href="lc3_man_pages/mount8.html"> <code>mount</code></a>.</td>
+  </tr>
+</tbody></table>
