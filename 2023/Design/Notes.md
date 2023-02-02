@@ -2,6 +2,7 @@
 
 - [Starting from Scrath](#starting-from-scrath)
 - [Hierarchy is Everything](#hierarchy-is-everything)
+- [Layout and Spacing](#layout-and-spacing)
 
 
 # Starting from Scrath
@@ -52,3 +53,34 @@
   - Secondary actions: should be clear but not prominent: outline styles or lower contrast bg colors are good options
   - Tertiary actions: should be discoverable but unobstusive. Basic link styling is good option
   - Destructive actions: you can give secondary or tertiary design and add a confirmation step, where the desctructive action is the primary action
+
+# Layout and Spacing
+- Start with too much white space
+  - White space should be removed not added
+  - Dense UIs have their place (dashboards, deliberate decision)
+- Establish a spacing and sizing system
+  - A linear scale won't work (>25%)
+  - Defining the systems (spacing and sizing): start with a default value 16px is commonly used
+    - 4px (16 x 0.25)
+    - 8px (16 x 0.5)
+    - 16px (16 x 1)
+    - 32px (16 x 2)
+    - 64px (16 x 4)
+    - 96px (16 x 6)
+    - 128px (16 x 8)
+    - 192px (16 x 12)
+    - 256px (16 x 16)
+    - 384px (16 x 24)
+    - 512px (16 x 32)
+    - 640px (16 x 40)
+    - 768px (16 x 48)
+- You don't have to fill the whole screen (only the space it needs)
+  - Shrink the canvas (mobile first for web responsive apps)
+  - Thinking in columns
+  - Don't force it (Don't cramp everything)
+- Grids are overrated
+  - Not all elements should be fluid
+  - Don't shrink an element until you need to
+- Relative sizing doesn't scale
+  - Relationships within elements
+- Avoid ambiguous spacing
