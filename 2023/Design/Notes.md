@@ -3,6 +3,7 @@
 - [Starting from Scrath](#starting-from-scrath)
 - [Hierarchy is Everything](#hierarchy-is-everything)
 - [Layout and Spacing](#layout-and-spacing)
+- [Design text](#design-text)
 
 
 # Starting from Scrath
@@ -84,3 +85,28 @@
 - Relative sizing doesn't scale
   - Relationships within elements
 - Avoid ambiguous spacing
+
+# Design text
+- Establish a type scale
+  - Modular scales: hand crafted, just like spacing and sizing
+  - Avoid em units
+- Use good fonts
+  - Play it safe
+  - Ignore typefaces with less than five weights
+  - Steal from people who care
+- Keep your line length in check
+  - 45 to 75 characters per line (easist with em)
+  - Dealing with wider content (don't ocupy the entire space)
+- Baseline, not center
+- Line-height is proportional
+  - 1.5 is a good place to start (don't use it everywhere)
+  - Accounting for line length (wider -> bigger)
+  - Accounting for font size (small -> bigger)
+- Not every link needs a color (can be only on hover)
+- Align with readability in mind
+  - Don't center long form text
+  - Right-align numbers
+  - Hyphenate justified text
+- Use letter-spacing effectively
+  - Tightening headlines
+  - Improving all-caps legibility (increase by 0.05em)
