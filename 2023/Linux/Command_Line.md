@@ -8,6 +8,13 @@
     - [less](#less)
     - [file](#file)
   - [Common Linux Directories](#common-linux-directories)
+  - [Manipulating files](#manipulating-files)
+    - [Wildcards](#wildcards)
+    - [cp](#cp)
+    - [mv](#mv)
+    - [rm](#rm)
+    - [mkdir](#mkdir)
+    - [touch](#touch)
 
 
 # Learning the Shell
@@ -286,3 +293,306 @@ The `file` command outputs the file type.
     understands are represented here.</td>
   </tr>
 </tbody></table>
+
+## Manipulating files
+
+### Wildcards
+
+Wildcards can be used with any command that accepts filename arguments.
+
+<table>
+
+  <tbody><tr>
+    <th><strong>Wildcard</strong></th>
+    <th><strong>Meaning</strong></th>
+  </tr>
+
+  <tr>
+    <td><strong>*</strong></td>
+    <td>Matches any characters</td>
+  </tr>
+
+  <tr>
+    <td><strong>?</strong></td>
+    <td>Matches any single character</td>
+  </tr>
+
+  <tr>
+    <td><strong>[<i>characters</i>]</strong></td>
+    <td>Matches any character that is a member of
+    the set <i>characters</i>. The set of
+    characters may also be expressed as a <i>POSIX
+    character class</i> such as one of the following:
+    <table>
+      <caption>POSIX Character Classes</caption>
+      <tbody><tr>
+        <td><strong>[:alnum:]</strong></td>
+        <td>Alphanumeric characters</td>
+      </tr>
+      <tr>
+        <td><strong>[:alpha:]</strong></td>
+        <td>Alphabetic characters</td>
+      </tr>
+      <tr>
+        <td><strong>[:digit:]</strong></td>
+        <td>Numerals</td>
+      </tr>
+      <tr>
+        <td><strong>[:upper:]</strong></td>
+        <td>Uppercase alphabetic characters</td>
+      </tr>
+      <tr>
+        <td><strong>[:lower:]</strong></td>
+        <td>Lowercase alphabetic characters</td>
+      </tr>
+    </tbody></table>
+    </td>
+  </tr>
+
+  <tr>
+    <td><strong>[!<i>characters</i>]</strong></td>
+    <td>Matches any character that is not a member
+    of the set <i>characters</i></td>
+  </tr>
+</tbody></table>
+
+Some use cases:
+
+<table>
+  <tbody><tr>
+    <th><strong>Pattern</strong></th>
+    <th><strong>Matches</strong></th>
+  </tr>
+
+  <tr>
+    <td>
+    <code >*</code>
+    </td>
+    <td>
+    <p>All filenames</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <code >g*</code>
+    </td>
+    <td>
+    <p>All filenames that begin with the
+    character "g"</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <code >b*.txt</code>
+    </td>
+    <td>
+    <p>All filenames that begin with the
+    character "b" and end with the characters
+    ".txt"</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <code >Data???</code>
+    </td>
+    <td>
+    <p>Any filename that begins with the
+    characters "Data" followed by exactly 3 more
+    characters</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <code >[abc]*</code>
+    </td>
+    <td>
+    <p>Any filename that begins with "a" or "b"
+    or "c" followed by any other characters</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <code >[[:upper:]]*</code>
+    </td>
+    <td>
+    <p>Any filename that begins with an uppercase
+    letter. This is an example of a character class.</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <code >BACKUP.[[:digit:]][[:digit:]]</code>
+    </td>
+    <td>
+    <p>Another example of character classes. This pattern
+    matches any filename that begins with the
+    characters "BACKUP." followed by exactly two
+    numerals.</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <code >*[![:lower:]]</code>
+    </td>
+    <td>
+    <p>Any filename that does not end with a
+    lowercase letter.</p>
+    </td>
+  </tr>
+</tbody></table>
+
+### cp
+The `cp` command copies files and directories
+<table>
+  <tbody><tr>
+    <th><strong>Command</strong></th>
+    <th><strong>Results</strong></th>
+  </tr>
+
+  <tr>
+    <td><code >cp <i>file1 file2</i></code></td>
+    <td>Copies the contents of <i>file1</i> into
+    <i>file2</i>. If <i>file2</i> does not exist,
+    it is created; <b>otherwise, <i>file2</i> is
+    silently overwritten with the contents of
+    <i>file1</i>.</b></td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >cp -i <i>file1 file2</i></code></span></td>
+    <td>Like above however, since the "-i"
+    (interactive) option is specified, if
+    <i>file2</i> exists, the user is prompted
+    before it is overwritten with the contents of
+    <i>file1</i>.</td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >cp <i>file1 dir1</i></code></span></td>
+    <td>Copy the contents of <i>file1</i> (into a
+    file named <i>file1</i>) inside of directory
+    <i>dir1</i>.</td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >cp -R <i>dir1 dir2</i></code></span></td>
+    <td>Copy the contents of the directory
+    <i>dir1</i>. If directory <i>dir2</i> does
+    not exist, it is created. Otherwise, it
+    creates a directory named <i>dir1</i> within
+    directory <i>dir2</i>.</td>
+  </tr>
+</tbody></table>
+
+### mv
+The `mv` command moves or renames files and directories
+<table>
+  <tbody><tr>
+    <th><strong>Command</strong></th>
+    <th><strong>Results</strong></th>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >mv <i>file1 file2</i></code></span></td>
+    <td>If <i>file2</i> does not exist, then
+    <i>file1</i> is renamed <i>file2</i>. <b>If
+    <i>file2</i> exists, its contents are
+    silently replaced with the contents of
+    <i>file1</i>.</b></td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >mv -i <i>file1 file2</i></code></span></td>
+    <td>Like above however, since the "-i"
+    (interactive) option is specified, if
+    <i>file2</i> exists, the user is prompted
+    before it is overwritten with the contents of
+    <i>file1</i>.</td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >mv <i>file1 file2 dir1</i></code></span></td>
+    <td>The files <i>file1</i> and <i>file2 </i> are
+    moved to directory <i>dir1</i>. If <i>dir1</i>
+    does not exist, <code class="user">mv</code> will
+    exit with an error.</td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >mv <i>dir1 dir2</i></code></span></td>
+    <td>If <i>dir2</i> does not exist, then
+    <i>dir1</i> is renamed <i>dir2</i>. If
+    <i>dir2</i> exists, the directory <i>dir1</i>
+    is moved within directory <i>dir2</i>.</td>
+  </tr>
+</tbody></table>
+
+### rm
+The `rm` command removes files and directories
+<table>
+  <tbody><tr>
+    <th><strong>Command</strong></th>
+    <th><strong>Results</strong></th>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >rm <i>file1 file2</i></code></span></td>
+    <td>Delete <i>file1</i> and <i>file2</i>. </td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >rm -i <i>file1 file2</i></code></span></td>
+    <td>Like above however, since the "-i"
+    (interactive) option is specified, the user
+    is prompted before each file is deleted.</td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >rm -r <i>dir1 dir2</i></code></span></td>
+    <td>Directories <i>dir1</i> and <i>dir2</i>
+    are deleted along with all of their
+    contents.</td>
+  </tr>
+</tbody></table>
+
+### mkdir
+The `mkdir` command creates directories
+<table>
+
+  <tbody><tr>
+    <th><strong>Command</strong></th>
+    <th><strong>Results</strong></th>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >cp *.txt text_files</code></span></td>
+    <td>Copy all files in the current working directory with names
+    ending with the characters ".txt" to an existing directory named
+    <i>text_files</i>.</td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >mv dir1 ../*.bak dir2</code></span></td>
+    <td>Move the subdirectory <i>dir1</i> and all the files ending
+    in ".bak" in the current working directory's parent directory
+    to an existing directory named <i>dir2</i>.</td>
+  </tr>
+
+  <tr>
+    <td><span style="white-space: nowrap"><code >rm *~</code></span></td>
+    <td>Delete all files in the current working directory that end
+    with the character "~". Some applications create backup files
+    using this naming scheme. Using this command will clean them
+    out of a directory.</td>
+  </tr>
+</tbody></table>
+
+### touch
+The `touch` command creates files
