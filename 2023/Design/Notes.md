@@ -3,7 +3,7 @@
 - [Starting from Scrath](#starting-from-scrath)
 - [Hierarchy is Everything](#hierarchy-is-everything)
 - [Layout and Spacing](#layout-and-spacing)
-- [Design text](#design-text)
+- [Design Text](#design-text)
 
 
 # Starting from Scrath
@@ -86,7 +86,7 @@
   - Relationships within elements
 - Avoid ambiguous spacing
 
-# Design text
+# Design Text
 - Establish a type scale
   - Modular scales: hand crafted, just like spacing and sizing
   - Avoid em units
