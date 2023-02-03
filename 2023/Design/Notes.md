@@ -4,6 +4,7 @@
 - [Hierarchy is Everything](#hierarchy-is-everything)
 - [Layout and Spacing](#layout-and-spacing)
 - [Design Text](#design-text)
+- [Working with Color](#working-with-color)
 
 
 # Starting from Scrath
@@ -110,3 +111,5 @@
 - Use letter-spacing effectively
   - Tightening headlines
   - Improving all-caps legibility (increase by 0.05em)
+
+# Working with Color
