@@ -5,6 +5,7 @@
 - [Layout and Spacing](#layout-and-spacing)
 - [Design Text](#design-text)
 - [Working with Color](#working-with-color)
+- [Creating Depth](#creating-depth)
 
 # Starting from Scrath
 
@@ -151,3 +152,29 @@
   - Flipping the contrast (use light bg and darker text)
   - Rotating the hue of bg
 - Don't rely on color alone
+
+# Creating Depth
+- Emulate a light source
+  - Raised elements (top lighter, handpicked)
+    - box-shadow: inset 0 1px 0 hsl(224, 84%, 74%)
+    - box-shadow: 0 1px 3px hsla(0, 0%, 0%, .2) (vertical offset)
+  - Inset elements (bottom light)
+    - box-shadow: 0 2px 0 hsla(0, 0%, 100%, .15)
+    - box-shadow: inset 0 2px 2px hsla(0,0%, 0%, 0.1)
+  - Don't get carried away
+- Use shadows to convey elevation
+  - small shadow + tight blur = slightly raised
+  - big shadow + higher blur = higher raised (attracts focus)
+  - small for buttons
+  - medium for dropdowns
+  - large for modals
+  - Establish an elevation system
+    - 5 from smallest to largest shadow
+  - Combining shadows with interaction
+- Shadows can have two parts
+  - box-shadow: 0 4px 6px rgba(0, 0, 0, .7), 0 5px 15px rgba(0, 0, 0, .1);
+  - Accounting for elevation
+- Even flat design can have depth
+  - Creating depth with color
+  - Using solid shadows
+- Overlap elements to create layers
