@@ -6,12 +6,12 @@
 - [Design Text](#design-text)
 - [Working with Color](#working-with-color)
 
-
 # Starting from Scrath
+
 - Start with a feature, not a layout
 - Details comes later
-    - Hold the color
-    - Don't over invest
+  - Hold the color
+  - Don't over invest
 - Don't design too much
   - Work in cycles: Design, code, design, code...
   - Be a pessimist: Design only features you're implementing right now
@@ -21,7 +21,7 @@
     - color
     - font (size, weight)
     - line height
-    - margin 
+    - margin
     - padding
     - width
     - height
@@ -32,12 +32,13 @@
   - Design by process of elimination: choose the middle out of 3
 
 # Hierarchy is Everything
+
 - Not all elements are equal (Visual Hierarchy)
 - Size isn't everything (use also font weight and color)
   - Color: dark, grey, lighter gray
   - Font weight: normal, heavier
 - Don't use grey text on colored backgrounds
-  - Hand-pick a new color based on bg color. 
+  - Hand-pick a new color based on bg color.
   - Same hue, adjust only saturation and lightness
   - Text should not look faded
 - Emphasize by de-emphasizing
@@ -57,6 +58,7 @@
   - Destructive actions: you can give secondary or tertiary design and add a confirmation step, where the desctructive action is the primary action
 
 # Layout and Spacing
+
 - Start with too much white space
   - White space should be removed not added
   - Dense UIs have their place (dashboards, deliberate decision)
@@ -88,6 +90,7 @@
 - Avoid ambiguous spacing
 
 # Design Text
+
 - Establish a type scale
   - Modular scales: hand crafted, just like spacing and sizing
   - Avoid em units
@@ -113,3 +116,38 @@
   - Improving all-caps legibility (increase by 0.05em)
 
 # Working with Color
+
+- Ditch hex for HSL
+- You need more colors than you think
+  - Greys 8-10; dark to low
+  - Primary color 5-10
+  - Accent colors 5-10
+    - Eye-grabbing
+    - Destructive actions
+    - Warning messages
+    - Etc.
+- Define your shades up front
+  - Choose the base color first
+    - Works good as a button background
+  - Darkest should be used as text in an alert
+  - Lightest bg of an alert
+  - Darkest and ligthest should have the same hue as base
+  - Filling in the gaps
+    - From 100 to 900
+    - Pick 700 and 300 first and so on
+- Don't let the ligthness kill your saturation
+  - Lighter and darker color should use more saturation
+  - Use perceived brightness to your advantage
+  - Changing brightness by rotating hue, no more than 20-30
+    - Lightest 60, 180, 300
+    - Darkest 0, 120, 240
+- Greys don't have to be grey, use saturation
+  - Neutral, 0 sat
+  - Cool, blue sat
+  - Warm, yellow sat
+- Accessible doesn't have to mean ugly
+  - <18px 4.5:1
+  - \>18px 3:1
+  - Flipping the contrast (use light bg and darker text)
+  - Rotating the hue of bg
+- Don't rely on color alone
