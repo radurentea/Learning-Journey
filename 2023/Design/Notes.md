@@ -8,6 +8,7 @@
 - [Creating Depth](#creating-depth)
 - [Working with Images](#working-with-images)
 - [Finishing Touches](#finishing-touches)
+- [Leveling up](#leveling-up)
 
 # Starting from Scrath
 
@@ -215,3 +216,10 @@
   - Dropdowns: split them up, use icons, title, desc
   - Tables: if they don't require sorting use more data in cells, images
   - Radio buttons: make them selectable cards
+
+# Leveling up
+  - Look for decisions you wouldn't have made
+    - Inverted data pickeg bg color
+    - Button inside text input
+    - Two different colors in a headline
+  - Rebuild your favorite interfaces
