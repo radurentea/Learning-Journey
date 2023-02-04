@@ -6,6 +6,7 @@
 - [Design Text](#design-text)
 - [Working with Color](#working-with-color)
 - [Creating Depth](#creating-depth)
+- [Working with Images](#working-with-images)
 
 # Starting from Scrath
 
@@ -178,3 +179,15 @@
   - Creating depth with color
   - Using solid shadows
 - Overlap elements to create layers
+
+# Working with Images
+- Text on photos
+  - Add overlay
+  - Lower the image contrast
+  - Colorize the image
+  - Add a text shadow
+- Don't scale icons
+- Don't add unreadable screenshots
+- Beware user-uploaded content
+  - Control the shape and size
+  - Prevent backgrounf bleed with box-shadow
