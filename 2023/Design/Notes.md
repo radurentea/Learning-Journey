@@ -7,6 +7,7 @@
 - [Working with Color](#working-with-color)
 - [Creating Depth](#creating-depth)
 - [Working with Images](#working-with-images)
+- [Finishing Touches](#finishing-touches)
 
 # Starting from Scrath
 
@@ -191,3 +192,26 @@
 - Beware user-uploaded content
   - Control the shape and size
   - Prevent backgrounf bleed with box-shadow
+
+# Finishing Touches
+- Supercharge the defaults
+  - Replace bullet lists with icons
+  - Replace quotes with icons for testimonials
+  - Links: color, weight, custom underline
+  - Forms: Add custom checkboxed, radio buttons
+- Add color with accent borders
+- Decorate your backgrounds
+  - Change bg color or add slight gradient
+  - Use a repeating pattern (Hero Patterns)
+  - Add a simple shape or illustration
+- Don't overlook empty states
+  - Add call to action with an img or an illustration
+  - Hide unnecessary content
+- Use fewer borders
+  - Use a box shadow
+  - Use two different bg colors
+  - Add extra spacing
+- Think outside the box
+  - Dropdowns: split them up, use icons, title, desc
+  - Tables: if they don't require sorting use more data in cells, images
+  - Radio buttons: make them selectable cards
