@@ -6,3 +6,5 @@
 ### Describe cloud computing
 ### Describe the benefits of using cloud services
 ### Describe cloud services types
+## Describe Azure architecture and services
+### Describe the core architectural components of Azure
