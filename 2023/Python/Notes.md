@@ -25,6 +25,7 @@
  - Recusion
  - Exponential
  ### Sorting
+ #### Bubble
    Slowest sorting, stable and easiest.
  
    Big O Complexity = O(n^2)
@@ -41,7 +42,6 @@
    return nums
  
  ```
- #### Bubble
  #### Merge
  #### Insertion
  #### Quicksort
