@@ -43,6 +43,38 @@
  
  ```
  #### Merge
+   Fast sorting if you're not concern with memory. Stable if condition between left and right is `<=`
+   
+   Big O complexity = O(n*log(n))
+   
+   ```python
+   def merge_sort(nums):
+       if len(nums) < 2:
+           return nums
+       left = merge_sort(nums[:len(nums) // 2])
+       right = merge_sort(nums[len(nums) // 2:])
+       return merge(left, right)
+       
+    def merge(left, right):
+       final = []
+       i = 0
+       j = 0
+       while i < len(left) and j < len(right):
+           if left[i] <= right[j]:
+               final.append(left[i])
+               i += 1
+           else:
+               final.append(right[j])
+               j += 1
+       while i < len(left):
+           final.append(left[i])
+           i += 1
+       while j < len(right):
+           final.append(right[j])
+           j += 1
+       return final
+   ```
+   
  #### Insertion
  Slow sorting, however, better than bubble sorting, stable and goes well with pre-sorted lists. Can be used in production cause it uses less memory than merge sort, but should be used with small lists. (couple hundreds)
 
