@@ -91,3 +91,4 @@ def insertion_sort(nums):
     return nums
 ```
  #### Quicksort
+ ### Prime Factorization
