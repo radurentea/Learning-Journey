@@ -5,3 +5,4 @@
  - How the C++ Compiler Works
  - How the C++ Linker Works
  - Variables in C++
+ - Functions in C++
