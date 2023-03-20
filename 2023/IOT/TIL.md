@@ -9,7 +9,9 @@ Devices with SoC:
 Computerphile explanation:
 https://www.youtube.com/watch?v=0MLaYe3y0BU&ab_channel=Computerphile
 
-## Multi-chip solutions
+An alternative to SoC is MCM.
+
+## MCM (Multi-chip module)
 
 Def:
   Electronic systems that are built using multiple individuals chips, each with a specific function or purpose. Better flexibility aand specialization in the design of the electronic system. More complex and more expensive to build.
