@@ -22,3 +22,11 @@ Devices using multi-chip solutions:
   - Networking Equipment (Routers, Switches etc) - packet processing, network management etc
   - Automotive Electronics - used in multiple electronic systems: enginge control units, safety systems, infotainment systems
   - Medical Devices - MRI machines, patient monitoring systems, etc use chips for data acquisition, processing and communication
+
+
+## Module
+
+Def:
+  A pre-assembled, self-contained component that typically integrates one or more specialized functionalities.It can be thought of as a building block that can be easily integrated into a larger system.
+  
+Modules can consist of one or more Integrated Circuits (including SoC) and other components such as passivce components, connectors, and sometimes even antennas. They are usually designed to perform a specific function or provide  a specific interface (e.g. Wi-Fi, Bluetooth, GPS, or sensor modules).
