@@ -40,6 +40,14 @@
      res = intl_followers * (1 - percent_lost_daily) ** days
      return res
    ```
+   - Logarithmic scale
+   ```python
+   def log_scale(data, base):
+     new_data = []
+     for number in data:
+         new_data.append(math.log(number,base))
+     return new_data
+   ```
  - Polynomial
  - Recusion
  - Exponential
