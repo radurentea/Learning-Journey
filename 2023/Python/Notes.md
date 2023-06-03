@@ -32,6 +32,7 @@
    ```
  - Math
    - Exponents
+   - Logarithm
  - Polynomial
  - Recusion
  - Exponential
