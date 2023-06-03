@@ -35,6 +35,11 @@
    - Logarithm
    - Factorial
    - Exponential Decay
+   ```
+   def decayed_followers(intl_followers, percent_lost_daily, days):
+     res = intl_followers * (1 - percent_lost_daily) ** days
+     return res
+   ```
  - Polynomial
  - Recusion
  - Exponential
