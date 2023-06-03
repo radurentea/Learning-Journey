@@ -33,6 +33,7 @@
  - Math
    - Exponents
    - Logarithm
+   - Factorial
  - Polynomial
  - Recusion
  - Exponential
