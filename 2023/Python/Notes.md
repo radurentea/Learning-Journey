@@ -31,6 +31,7 @@
      return nums[n // 2]
    ```
  - Math
+   - Exponents
  - Polynomial
  - Recusion
  - Exponential
