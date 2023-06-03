@@ -34,6 +34,7 @@
    - Exponents
    - Logarithm
    - Factorial
+   - Exponential Decay
  - Polynomial
  - Recusion
  - Exponential
