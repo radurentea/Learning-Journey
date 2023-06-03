@@ -20,6 +20,16 @@
 ## Build a local dev env
 
 ## Learn Algorithms
+ - Introduction
+   - Median
+   ```python
+   def median_followers(nums):
+     nums.sort()
+     n = len(nums)
+     if n % 2 == 0:
+         return (nums[n // 2 - 1] + nums[n // 2]) / 2
+     return nums[n // 2]
+   ```
  - Math
  - Polynomial
  - Recusion
