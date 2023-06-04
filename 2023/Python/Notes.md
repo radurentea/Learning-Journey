@@ -54,6 +54,8 @@
 
 
      ![Big-O Complexity Chart](./images/big-o-chart.jpeg)
+     - Examples:
+       - O(n) - Order"n" : find_min; find_max. Any algorithms that loops over all elements once.
  - Recusion
  - Exponential
  ### Sorting
