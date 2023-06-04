@@ -49,6 +49,8 @@
      return new_data
    ```
  - Polynomial
+   - Big O Notation
+   > Big O is a characterization of algorithms according to their worst-case growth rates
  - Recusion
  - Exponential
  ### Sorting
