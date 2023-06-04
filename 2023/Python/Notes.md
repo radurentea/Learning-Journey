@@ -103,6 +103,19 @@
        def find_last_name(names_dict, first_name):
            return names_dict.get(first_name, None)
        ```
+        - O(log(n)) - Order "log n": They grow according to input size, but only according to the log of the input. Only slightly lower than O(1). Example: binary searches
+       ```python
+       def binary_search(target, arr):
+           low = 0
+           high = len(arr) - 1
+           while low <= high:
+               median = (low + high) // 2
+               if arr[median] < target:
+                   low = median + 1
+               else:
+                   high = median - 1
+           return low != len(arr) and arr[low] == target
+       ```
  - Recusion
  - Exponential
  ### Sorting
