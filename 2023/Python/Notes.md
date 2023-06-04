@@ -75,6 +75,15 @@
        ```
         - O(nm): If "n" and "m" increase at the same rate, O(nm) complexity is the same as O(n^2). Else, better to calculate complexity separately
        ```python
+       # all_handles = [
+       #   ["cosmofan1010", "cosmogirl", "billjane321"],
+       #   ["cosmokiller", "gr8", "cosmojane3"],
+       #   ["iloveboots", "paperthin"]
+       # ]
+       # brand_name = "cosmo"
+       # Expected output: 1.33 (Because 4 handles contained "cosmo" and there are 3 lists)
+       
+       
        def get_avg_brand_followers(all_handles, brand_name):
            count = 0
            for influencer in all_handles:
