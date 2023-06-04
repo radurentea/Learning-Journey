@@ -56,6 +56,14 @@
      ![Big-O Complexity Chart](./images/big-o-chart.jpeg)
      - Examples:
        - O(n) - Order"n" : find_min; find_max. Any algorithms that loops over all elements once.
+       ```python
+       def find_max(nums):
+         max = float("-inf")
+         for num in nums:
+           if max < num:
+             max = num
+         return max
+       ```
  - Recusion
  - Exponential
  ### Sorting
