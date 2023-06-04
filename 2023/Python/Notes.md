@@ -96,6 +96,13 @@
            return count / len(all_handles)
                 
        ```
+       - O(1) - Order 1: No matter the size of the input, there is no growth in the runtime of the algorithm. Example: Map data structure in Python.
+       ```python
+       # names_dict = a dictionary of first_name -> last_name
+       
+       def find_last_name(names_dict, first_name):
+           return names_dict.get(first_name, None)
+       ```
  - Recusion
  - Exponential
  ### Sorting
