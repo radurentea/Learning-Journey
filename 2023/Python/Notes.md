@@ -81,6 +81,7 @@
        #   ["iloveboots", "paperthin"]
        # ]
        # brand_name = "cosmo"
+       
        # Expected output: 1.33 (Because 4 handles contained "cosmo" and there are 3 lists)
        
        
