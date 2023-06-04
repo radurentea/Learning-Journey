@@ -73,6 +73,17 @@
                        return True
            return False
        ```
+        - O(nm): If "n" and "m" increase at the same rate, O(nm) complexity is the same as O(n^2). Else, better to calculate complexity separately
+       ```python
+       def get_avg_brand_followers(all_handles, brand_name):
+           count = 0
+           for influencer in all_handles:
+               for follower in influencer:
+                   if brand_name in follower:
+                       count += 1
+           return count / len(all_handles)
+                
+       ```
  - Recusion
  - Exponential
  ### Sorting
