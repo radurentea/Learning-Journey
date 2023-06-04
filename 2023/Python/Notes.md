@@ -50,8 +50,10 @@
    ```
  - Polynomial
    - Big O Notation
-     > Big O is a characterization of algorithms according to their worst-case growth rates
-     ![Big-O Complexity Chart](../images/big-o-chart.jpg)
+     > Big O is a characterization of algorithms according to their worst-case growth rate
+
+
+     ![Big-O Complexity Chart](./images/big-o-chart.jpeg)
  - Recusion
  - Exponential
  ### Sorting
