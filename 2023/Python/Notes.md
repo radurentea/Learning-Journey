@@ -55,7 +55,7 @@
 
      ![Big-O Complexity Chart](./images/big-o-chart.jpeg)
      - Examples:
-       - O(n) - Order"n" : find_min; find_max. Any algorithms that loops over all elements once.
+       - O(n) - Order"n": find_min; find_max. Any algorithms that loops over all elements once.
        ```python
        def find_max(nums):
            max = float("-inf")
@@ -63,6 +63,15 @@
                if max < num:
                   max = num
            return max
+       ```
+       - O(n^2) - Order "n squared": Nested loops.
+       ```python
+       def does_name_exist(first_names, last_names, full_name):
+           for first_name in first_names:
+               for last_name in last_names:
+                   if first_name + " " + last_name == full_name:
+                       return True
+           return False
        ```
  - Recusion
  - Exponential
