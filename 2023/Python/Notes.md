@@ -65,6 +65,21 @@
                if max < num:
                   max = num
            return max
+           
+        # This method DOES NOT preserves the original order of the elements   
+        def remove_duplicates(nums):
+            unique_nums = set(nums)
+            return list(unique_nums)
+            
+        # This method preserves the original order of the elements. This method uses more memory because it stores the newly created dictionary. Works only from Python 3.7+
+        # OrderedDict.fromkeys(nums) creates a new ordered dictionary with the elements  of 'nums' as keys and None as their corresponding values, automatically removing duplicates because dictionaries can't have duplicate keys
+        # list() converts the dictionary back into a list
+        from collections import OrderedDict
+
+        def remove_duplicates(nums):
+            unique_nums = list(OrderedDict.fromkeys(nums)) 
+            return unique_nums
+
        ```
        - O(n^2) - Order "n squared": Nested loops.
        ```python
@@ -74,6 +89,13 @@
                    if first_name + " " + last_name == full_name:
                        return True
            return False
+           
+       def remove_duplicates(nums):
+           unique_nums = []
+           for num in nums:
+               if num not in unique_nums:
+                   unique_nums.append(num)
+           return unique_nums
        ```
         - O(nm): If "n" and "m" increase at the same rate, O(nm) complexity is the same as O(n^2). Else, better to calculate complexity separately
        ```python
