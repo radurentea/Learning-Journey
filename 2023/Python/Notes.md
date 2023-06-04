@@ -54,6 +54,8 @@
 
 
      ![Big-O Complexity Chart](./images/big-o-chart.jpeg)
+     - Notes:
+       - Constants don't matter
      - Examples:
        - O(n) - Order"n": find_min; find_max. Any algorithms that loops over all elements once.
        ```python
