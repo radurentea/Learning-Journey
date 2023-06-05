@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+// Print all the letters of a string using recursion
 void printString(const char* str)
 {
     if(*str == '\0')
@@ -23,7 +24,3 @@ int main()
 
     return 0;
 }
-
-// Print all the letters of a string using recursion
-
-
