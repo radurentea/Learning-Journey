@@ -1,1 +1,1 @@
-#Bunch of C exercises
+# Bunch of C exercises
