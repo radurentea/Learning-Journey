@@ -139,6 +139,7 @@
            return low != len(arr) and arr[low] == target
        ```
  - Recusion
+   > Recursion is the process of defining something in terms of itself.
  - Exponential
  ### Sorting
  #### Bubble
