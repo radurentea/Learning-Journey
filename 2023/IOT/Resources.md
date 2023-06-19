@@ -5,3 +5,4 @@
 - [Assembly TutorialsPoint](https://www.tutorialspoint.com/assembly_programming/index.htm)
 - [ESP-C3 Wireless Adventure Book](https://www.espressif.com/sites/default/files/documentation/ESP32-C3%20Wireless%20Adventure.pdf)
 - [C Tutorial](https://www.cprogramming.com/tutorial/c/lesson1.html)
+- [Microcontroller Embedded C Udemy](https://www.udemy.com/course/microcontroller-embedded-c-programming/)
