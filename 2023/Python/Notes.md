@@ -34,7 +34,7 @@
    - Exponents
    - Logarithm
    - Factorial
-   - Exponential Decay
+   - Exponential Decay = a process where a quantity decreases over time at a rate proportional to its current value
    ```python
    def decayed_followers(intl_followers, percent_lost_daily, days):
      res = intl_followers * (1 - percent_lost_daily) ** days
