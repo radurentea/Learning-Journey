@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        .avatar {
+            border-radius: 50%;
+        }
+    </style>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    const user= {
+        name: "Radu",
+        imageUrl: "https://avatars.githubusercontent.com/u/25748706?s=400&u=9c0540fbe8d82e9ef2438c96ab031124d0934a01&v=4",
+        imageSize: 90,
+    };
+
+    const products = [
+        { title: 'Cabbage', id: 1 },
+        { title: 'Garlic', id: 2 },
+        { title: 'Apple', id: 3 },
+    ];
+
+    const listItems = products.map(product =>
+        <li key={product.id}>
+            {product.title}
+        </li>
+    );
+    
+    function MyApp() {
+        return (
+            <div>
+                <h1 className="avatar">{user.name}</h1>
+                <img
+                    className="avatar"
+                    src={user.imageUrl}
+                    alt={'Photo of ' + user.name}
+                    style={{
+                        width: user.imageSize,
+                        height: user.imageSize
+                    }}
+                />
+                <ul>{listItems}</ul>
+                <MyButton/>
+            </div>
+        );
+    }
+
+    function MyButton() {
+        function handleClick(){
+            alert('You clicked me!');
+        }
+
+        return (
+            <button onClick={handleClick}>I'm a button</button>
+        );
+    }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this page for starting a new React project with JSX:
+      https://react.dev/learn/start-a-new-react-project
+
+      Read this page for adding React with JSX to an existing project:
+      https://react.dev/learn/add-react-to-an-existing-project
+    -->
+  </body>
+</html>
