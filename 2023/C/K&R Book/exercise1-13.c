@@ -14,7 +14,7 @@ int main(void)
 
     wordLength = i = maxWordLength = 0;
     state = OUT;
-    
+
     while ((c = getchar()) != EOF)
     {
         if(c == ' ' || c == '\t' || c == '\n')
@@ -28,7 +28,12 @@ int main(void)
                     maxWordLength = wordLength;
                 }
                 wordLength = 0;
-                ++i;
+
+                if(i < MAX_WORDS - 1)
+                {
+                    ++i;
+                }
+                
             }
         }
         else
