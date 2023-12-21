@@ -8,67 +8,67 @@ easy to draw the histogram with the bars horizontal; a vertical orientation is m
 
 int main(void)
 {
-    int c, wordLength, state, maxWordLength;
-    int arr[MAX_WORDS];
-    int i;
+    int inputChar, currentWordLength, wordState, maxLengthOfWord;
+    int wordLengthsArray[MAX_WORDS];
+    int wordCount;
 
-    wordLength = i = maxWordLength = 0;
-    state = OUT;
+    currentWordLength = wordCount = maxLengthOfWord = 0;
+    wordState = OUT;
 
-    while ((c = getchar()) != EOF)
+    while ((inputChar = getchar()) != EOF)
     {
-        if(c == ' ' || c == '\t' || c == '\n')
+        if(inputChar == ' ' || inputChar == '\t' || inputChar == '\n')
         {
-            if(state == IN)
+            if(wordState == IN)
             {
-                state = OUT;
-                arr[i] = wordLength;
-                if(wordLength > maxWordLength)
+                wordState = OUT;
+                wordLengthsArray[wordCount] = currentWordLength;
+                if(currentWordLength > maxLengthOfWord)
                 {
-                    maxWordLength = wordLength;
+                    maxLengthOfWord = currentWordLength;
                 }
-                wordLength = 0;
+                currentWordLength = 0;
 
-                if(i < MAX_WORDS - 1)
+                if(wordCount < MAX_WORDS - 1)
                 {
-                    ++i;
+                    ++wordCount;
                 }
-                else if (i == MAX_WORDS - 1)
+                else if (wordCount == MAX_WORDS - 1)
                 {
-                    i = MAX_WORDS;
+                    wordCount = MAX_WORDS;
                 }
                 
             }
         }
         else
         {
-            if(state == OUT)
+            if(wordState == OUT)
             {
-                state = IN;
-                wordLength = 1;
+                wordState = IN;
+                currentWordLength = 1;
             }
             else
             {
-                ++wordLength;
+                ++currentWordLength;
             }
         }
     }
 
 
     // Handle the last word
-    if(state == IN && i < MAX_WORDS)
+    if(wordState == IN && wordCount < MAX_WORDS)
     {
-        arr[i++] = wordLength;
-        if (wordLength > maxWordLength)
+        wordLengthsArray[wordCount++] = currentWordLength;
+        if (currentWordLength > maxLengthOfWord)
         {
-            maxWordLength = wordLength;
+            maxLengthOfWord = currentWordLength;
         }
     }
 
     // Printing top elements for those with maxium length
-    for (int l = 0; l < i; l++)
+    for (int topIndex = 0; topIndex < wordCount; topIndex++)
     {
-        if (arr[l] == maxWordLength)
+        if (wordLengthsArray[topIndex] == maxLengthOfWord)
         {
             printf("   __   ");
         } else {
@@ -79,27 +79,27 @@ int main(void)
     printf("\n");
 
     // Printing the histogram
-    for(int j = maxWordLength; j > 0; --j)
+    for(int heightIndex = maxLengthOfWord; heightIndex > 0; --heightIndex)
     {
-        for(int k = 0; k < i; ++k)
+        for(int wordIndex = 0; wordIndex < wordCount; ++wordIndex)
         {
-            if (arr[k] >= j)
+            if (wordLengthsArray[wordIndex] >= heightIndex)
             {
-                if(arr[k] == 1)
+                if(wordLengthsArray[wordIndex] == 1)
                 {
                     printf("  |__|  ");
-                    --arr[k];
+                    --wordLengthsArray[wordIndex];
                 }
                 else
                 {
                     printf("  |  |  ");
-                    --arr[k];
+                    --wordLengthsArray[wordIndex];
                 }
                 
             }
             else 
             {
-                if((arr[k] + 1) == j)
+                if((wordLengthsArray[wordIndex] + 1) == heightIndex)
                 {
                     printf("   __   ");
                 }
