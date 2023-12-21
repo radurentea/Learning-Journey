@@ -4,51 +4,103 @@ easy to draw the histogram with the bars horizontal; a vertical orientation is m
 #include <stdio.h>
 #define IN 1
 #define OUT 0
-#define NONSPACE '-'
+#define MAX_WORDS 10
 
 int main(void)
 {
-    int c, wordLength, state;
-    int arr[10];
+    int c, wordLength, state, maxWordLength;
+    int arr[MAX_WORDS];
     int i;
 
-    wordLength = 0;
+    wordLength = i = maxWordLength = 0;
     state = OUT;
-    i = 0;
-
+    
     while ((c = getchar()) != EOF)
     {
         if(c == ' ' || c == '\t' || c == '\n')
         {
-            state = OUT;
-            if (wordLength > 0)
+            if(state == IN)
+            {
+                state = OUT;
+                arr[i] = wordLength;
+                if(wordLength > maxWordLength)
                 {
-                    arr[i] = wordLength;
-                    ++i;
+                    maxWordLength = wordLength;
                 }
-            wordLength = 0;
+                wordLength = 0;
+                ++i;
+            }
         }
-        else if(state == OUT)
+        else
         {
-            ++wordLength;
-            state = IN;
-        }
-        else if(state == IN)
-        {
-            ++wordLength;
+            if(state == OUT)
+            {
+                state = IN;
+                wordLength = 1;
+            }
+            else
+            {
+                ++wordLength;
+            }
         }
     }
 
-    for(int j=0;j < i; ++j)
+
+    // Handle the last word
+    if(state == IN)
     {
-        int length = arr[j];
-        printf(" __\n");
-        while(length > 1)
+        arr[i++] = wordLength;
+        if (wordLength > maxWordLength)
         {
-            printf("|  |\n");
-            --length;
+            maxWordLength = wordLength;
         }
-        printf("|__|\n\n");
+    }
+
+    // Printing top elements for those with maxium length
+    for (int l = 0; l < i; l++)
+    {
+        if (arr[l] == maxWordLength)
+        {
+            printf("   __   ");
+        } else {
+            printf("        ");
+        }
+    }
+
+    printf("\n");
+
+    // Printing the histogram
+    for(int j = maxWordLength; j > 0; --j)
+    {
+        for(int k = 0; k < i; ++k)
+        {
+            if (arr[k] >= j)
+            {
+                if(arr[k] == 1)
+                {
+                    printf("  |__|  ");
+                    --arr[k];
+                }
+                else
+                {
+                    printf("  |  |  ");
+                    --arr[k];
+                }
+                
+            }
+            else 
+            {
+                if((arr[k] + 1) == j)
+                {
+                    printf("   __   ");
+                }
+                else 
+                {
+                    printf("        ");
+                }
+            }
+        }
+        printf("\n");
     }
 
     return 0;
