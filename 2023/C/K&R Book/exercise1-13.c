@@ -33,6 +33,10 @@ int main(void)
                 {
                     ++i;
                 }
+                else if (i == MAX_WORDS - 1)
+                {
+                    i = MAX_WORDS;
+                }
                 
             }
         }
@@ -52,7 +56,7 @@ int main(void)
 
 
     // Handle the last word
-    if(state == IN)
+    if(state == IN && i < MAX_WORDS)
     {
         arr[i++] = wordLength;
         if (wordLength > maxWordLength)
