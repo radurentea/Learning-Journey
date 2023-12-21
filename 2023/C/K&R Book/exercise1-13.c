@@ -2,22 +2,25 @@
 easy to draw the histogram with the bars horizontal; a vertical orientation is more challenging. */
 
 #include <stdio.h>
+
 #define IN 1 // State when inside word
 #define OUT 0 // State when outside word
 #define MAX_WORDS 10 // Maximum number of words to process
+#define MAX_WORD_LENGTH 50 // Maximum length of a single word
 
 int main(void)
 {
-    int inputChar, currentWordLength, wordState, maxLengthOfWord;
+    int inputChar;
+    int currentWordLength = 0;
+    int wordState = OUT;
+    int maxLengthOfWord = 0;
     int wordLengthsArray[MAX_WORDS];
-    int wordCount;
-
-    // Initialize variables
-    currentWordLength = wordCount = maxLengthOfWord = 0;
-    wordState = OUT;
+    int wordCount = 0;
+    int isWordLimitExceeded = 0;
+    int isWordLengthExceeded = 0;
 
     // Loop to read characters until EOF
-    while ((inputChar = getchar()) != EOF)
+    while ((inputChar = getchar()) != EOF && !isWordLimitExceeded && !isWordLengthExceeded)
     {
         // Check for whitespace characters
         if(inputChar == ' ' || inputChar == '\t' || inputChar == '\n')
@@ -26,6 +29,13 @@ int main(void)
             if(wordState == IN)
             {
                 wordState = OUT;
+
+                if(currentWordLength > MAX_WORD_LENGTH)
+                {
+                    isWordLengthExceeded = 1;
+                    break;
+                }
+                
                 wordLengthsArray[wordCount] = currentWordLength;
 
                 // Update maximum word length if necessary
@@ -45,6 +55,11 @@ int main(void)
                 {
                     wordCount = MAX_WORDS;
                 }
+                else 
+                {
+                    isWordLimitExceeded = 1;
+                    break;
+                }
             }
         }
         else
@@ -62,18 +77,30 @@ int main(void)
         }
     }
 
-
-    // Handle the last word if the input ended mid-word
-    if(wordState == IN && wordCount < MAX_WORDS)
+    // Handle special cases
+    if (isWordLimitExceeded)
     {
-        wordLengthsArray[wordCount++] = currentWordLength;
-
-        // Update maximum word length for the last word
-        if (currentWordLength > maxLengthOfWord)
+        printf("Word limit exceeded. Only the first %d words are processed.\n", MAX_WORDS);
+    }
+    else if(isWordLengthExceeded)
+    {
+        printf("Word length limit exceeded. Words longer than %d characters are not processed.\n", MAX_WORD_LENGTH);
+    }
+    else
+    {
+        // Handle the last word if the input ended mid-word
+        if(wordState == IN && wordCount < MAX_WORDS)
         {
-            maxLengthOfWord = currentWordLength;
+            wordLengthsArray[wordCount++] = currentWordLength;
+
+            // Update maximum word length for the last word
+            if (currentWordLength > maxLengthOfWord)
+            {
+                maxLengthOfWord = currentWordLength;
+            }
         }
     }
+    
 
     // Printing top elements for words with maxium length
     for (int topIndex = 0; topIndex < wordCount; topIndex++)
@@ -121,6 +148,6 @@ int main(void)
         }
         printf("\n");
     }
-    
+
     return 0;
 }
