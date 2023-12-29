@@ -13,6 +13,12 @@ int main(void) {
     int count = 0;
     int maxUsedChar = 0;
 
+    // Initialize the arrays
+    for (int i = 0; i < MAX_CHARACTERS; i++) {
+        arrChars[i] = '\0';
+        arrCharsCount[i] = 0;
+    }
+
     while((c = getchar()) != EOF) {
         if (c != ' ' && c != '\t' && c != '\n') {
             int i = 0;
